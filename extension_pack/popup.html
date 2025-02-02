@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Route Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="images/eco-tourism.png" alt="EcoTogether Logo" class="logo">
+            <h1 class="title">EcoTogether</h1>
+        </div>
+        <div class="header-icons">
+            <button class="icon-btn"><i class="fas fa-cog"></i></button> <!-- Settings -->
+            <button class="icon-btn"><i class="fas fa-times"></i></button> <!-- Close -->
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="container">
+        <h1>Login</h1>
+        <div id="loginForm">
+            <input type="text" id="username" class="input-field" placeholder="Username" required />
+            <input type="password" id="password" class="input-field" placeholder="Password" required />
+            <button id="loginBtn" class="btn">Login</button>
+        </div>
+        <a href="#" id="forgotPasswordLink" class="link">Forgot Password?</a>
+        <div id="loginMessage" class="error-message"></div>
+    </div>
+
+    <div id="mainContent" style="display: none;">
+
+        <!-- Authenticated Section -->
+        <div id="authenticatedSection" class="container" style="display:none;">
+            <h2>Welcome, <span id="userName"></span></h2>
+
+            <!-- From/To Fields -->
+            <input type="text" id="from" class="input-field" placeholder="From" />
+            <!-- <button id="getLocationBtn" class="btn">Get Current Location</button> -->
+            <input type="text" id="to" class="input-field" placeholder="To" />
+            <button id="searchBtn" class="btn">Search</button>
+
+            <!-- Route Results -->
+            <div id="routeResults"></div>
+        </div>
+
+        <!-- Upcoming Rides Section -->
+        <div id="itinerarySection" class="container" style="display:none;">
+            <h2>Your Upcoming Rides</h2>
+            <div id="ridesList">
+                <!-- Dynamic list of upcoming rides will go here -->
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profileSection" class="container" style="display:none;">
+            <h2>Profile</h2>
+            <!-- <div class="profile-image">
+                <img src="profile.jpg" alt="User Profile Picture" />
+            </div> -->
+            <h2 class="profile-name">User Name</h2>
+            <div class="preference-text-section">
+                <label class="preference-text">
+                    <span>LGBTQIA+ Friendly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="lgbtqFriendly">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label class="preference-text">
+                    <span>Pet Friendly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="petFriendly">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label class="preference-text">
+                    <span>Accessibility Friendly</span>
+                    <label class="switch">
+                        <input type="checkbox" id="accessibilityFriendly">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label class="preference-text">
+                    <span>Bike Rack Accessible</span>
+                    <label class="switch">
+                        <input type="checkbox" id="bikeRackAccessible">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+            <button type="button" id="logoutBtn" class="btn logout-btn">Logout</button>
+        </div>
+    </div>
+    <!-- Tab Bar -->
+    <nav class="tab-bar">
+        <button class="tab-btn active" id="navTab"><i class="fas fa-route"></i></button>
+        <button class="tab-btn" id="itineraryTab"><i class="fas fa-calendar-alt"></i></button>
+        <button class="tab-btn" id="profileTab"><i class="fas fa-user"></i></button>
+    </nav>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
+
+<!-- Sidebar -->
+<!-- <div id="sidebar" class="sidebar" style="display:none;">
+    <div id="sidebarContent">
+        <button id="bookRideBtn" class="btn">Book Ride</button>
+    </div>
+</div> -->
